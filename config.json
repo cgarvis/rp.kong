@@ -1,0 +1,22 @@
+{
+    "apis": [
+        {
+            "name": "token",
+            "attributes": {
+                "upstream_url": "https://rp-frontend.auth0.com/oauth/ro",
+                "request_path": "token",
+                "strip_request_path": true
+            },
+            "plugins": [
+                {
+                    "name": "cors",
+                    "config.methods": "GET, HEAD, POST"
+                },
+                {
+                    "name": "request-transformer",
+                    "config.add.json": "client_id:ky7DPxNQz5dwo9fLYH3RVjMe9Qw7fFgY, connection:Username-Password-Authentication, scope: openid email"
+                }
+            ]
+        }
+    ]
+}
