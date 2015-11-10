@@ -29,6 +29,8 @@ fi
 echo "==> Installing npm dependencies…"
 npm install --silent
 
-echo "==> Install kong"
-brew tap mashape/kong
-brew install kong --with-cassandra
+if ! hash kong 2>/dev/null; then
+    echo "==> Install kong"
+    brew tap mashape/kong
+    brew install kong --with-cassandra
+fi
